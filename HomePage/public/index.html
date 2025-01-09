@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Meet Me!</title>
+</head>
+<body>
+  <h2>Hello! I'm Aarush Katta</h2>
+  <p>I'm a freshman at OSU, majoring in Computer Science. Here is the link to my <a href="https://github.com/arkseal">GitHub.</a> Here are some programming languages I learned:</p>
+  <ul>
+    <li>Python</li>
+    <li>Java</li>
+    <li>Dart</li>
+    <li>JavaScript</li>
+  </ul>
+  <p>I have a little puzzle, click on the number that doesn't follow the pattern to get a prize!</p>
+  <table>
+    <tr>
+        <td onclick="wrongAnswer()">1</td>
+        <td onclick="wrongAnswer()">1</td>
+        <td onclick="wrongAnswer()">2</td>
+        <td onclick="wrongAnswer()">3</td>
+        <td onclick="wrongAnswer()">5</td>
+    </tr>
+    <tr>
+        <td onclick="wrongAnswer()">8</td>
+        <td onclick="wrongAnswer()">13</td>
+        <td onclick="correctAnswer()">26</td>
+        <td onclick="wrongAnswer()">34</td>
+        <td onclick="wrongAnswer()">55</td>
+    </tr>
+    <tr>
+        <td onclick="wrongAnswer()">89</td>
+        <td onclick="wrongAnswer()">144</td>
+        <td onclick="wrongAnswer()">233</td>
+        <td onclick="wrongAnswer()">377</td>
+        <td onclick="wrongAnswer()">610</td>
+    </tr>
+  </table>
+  <div id="im"></div>
+  <h4 id="msg"></h4>
+  
+  <script type="text/javascript">
+    var solved = false;
+    function correctAnswer() {
+      solved = true;
+
+      let i = document.createElement("img");
+      i.setAttribute("src", "congratulations.jpg");
+      i.setAttribute("alt", "Congratulations");
+      i.setAttribute("width", 200);
+      
+      document.getElementById("im").appendChild(i)
+      document.getElementById("msg").innerHTML = "Yippie! You solved the problem!";
+    }
+    function wrongAnswer() {
+      if (!solved)
+        document.getElementById("msg").innerHTML = "Wrong answer, Try again.";
+    }
+  </script>
+</body>
+</html>
